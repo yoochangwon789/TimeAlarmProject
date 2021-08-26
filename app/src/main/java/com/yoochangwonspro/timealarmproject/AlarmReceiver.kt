@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
 class AlarmReceiver : BroadcastReceiver() {
@@ -27,7 +28,10 @@ class AlarmReceiver : BroadcastReceiver() {
     }
 
     private fun initCreateNotification(context: Context) {
-        with()
+        with(NotificationManagerCompat.from(context)) {
+            var builder = NotificationCompat.Builder(context, CHANNEL_ID)
+
+        }
     }
 
     companion object {
