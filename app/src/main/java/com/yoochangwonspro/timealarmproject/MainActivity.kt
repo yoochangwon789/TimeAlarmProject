@@ -46,6 +46,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun renderView() {
+
+    }
+
     @SuppressLint("CommitPrefEdits")
     private fun alarmSaveData(
         hour: Int,
