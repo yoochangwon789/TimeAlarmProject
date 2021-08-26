@@ -35,7 +35,7 @@ class AlarmReceiver : BroadcastReceiver() {
                 .setContentText("일어날 시간입니다.")
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
 
-            notify(, builder.build())
+            notify(NOTIFICATION_ID, builder.build())
         }
     }
 
