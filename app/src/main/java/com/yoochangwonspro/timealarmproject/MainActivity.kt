@@ -37,7 +37,10 @@ class MainActivity : AppCompatActivity() {
 
             val calendar = Calendar.getInstance()
 
-            TimePickerDialog(this, { picker, hour, minute ->
+            TimePickerDialog(this, { _, hour, minute ->
+                val model = alarmSaveData(hour, minute, false)
+
+
 
             }, Calendar.HOUR_OF_DAY, Calendar.MINUTE, false)
         }
@@ -47,9 +50,13 @@ class MainActivity : AppCompatActivity() {
     private fun alarmSaveData(
         hour: Int,
         minute: Int,
-        onOff: Boolean
-    ) : AlarmModel {
-        val model = AlarmModel(hour, minute, onOff)
+        onOff: Boolean,
+    ): AlarmModel {
+        val model = AlarmModel(
+            hour = hour,
+            minute = minute,
+            onOff = onOff
+        )
 
         val sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
 
