@@ -77,6 +77,10 @@ class MainActivity : AppCompatActivity() {
         return model
     }
 
+    private fun alarmPendingIntentCancel() {
+
+    }
+
     companion object {
         private const val SHARED_PREFERENCES_NAME = "time"
         private const val SHARED_PREFERENCES_TIME_KEY = "time_key"
