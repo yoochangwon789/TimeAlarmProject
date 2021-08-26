@@ -30,7 +30,10 @@ class AlarmReceiver : BroadcastReceiver() {
     private fun initCreateNotification(context: Context) {
         with(NotificationManagerCompat.from(context)) {
             var builder = NotificationCompat.Builder(context, CHANNEL_ID)
-
+                .setSmallIcon(R.drawable.ic_baseline_notifications_24)
+                .setContentTitle("알람")
+                .setContentText("일어날 시간입니다.")
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
         }
     }
 
