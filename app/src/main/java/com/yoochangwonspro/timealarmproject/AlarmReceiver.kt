@@ -26,8 +26,8 @@ class AlarmReceiver : BroadcastReceiver() {
         }
     }
 
-    private fun initCreateNotification() {
-
+    private fun initCreateNotification(context: Context) {
+        with()
     }
 
     companion object {
