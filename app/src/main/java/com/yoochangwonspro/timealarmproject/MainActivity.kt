@@ -1,11 +1,13 @@
 package com.yoochangwonspro.timealarmproject
 
 import android.annotation.SuppressLint
+import android.app.TimePickerDialog
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +35,11 @@ class MainActivity : AppCompatActivity() {
     private fun initAlarmChangeButton() {
         alarmChangeButton.setOnClickListener {
 
+            val calendar = Calendar.getInstance()
+
+            TimePickerDialog(this, { picker, hour, minute ->
+
+            }, Calendar.HOUR_OF_DAY, Calendar.MINUTE, false)
         }
     }
 
