@@ -11,8 +11,9 @@ import androidx.core.app.NotificationManagerCompat
 
 class AlarmReceiver : BroadcastReceiver() {
 
-    override fun onReceive(context: Context?, intent: Intent?) {
-        TODO("Not yet implemented")
+    override fun onReceive(context: Context, intent: Intent?) {
+        initNotificationCreateChannel(context)
+        initCreateNotification(context)
     }
 
     private fun initNotificationCreateChannel(context: Context) {
