@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun alarmPendingIntentCancel() {
-
+        
     }
 
     companion object {
