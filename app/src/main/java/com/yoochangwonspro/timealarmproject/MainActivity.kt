@@ -41,8 +41,12 @@ class MainActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
 
         with(sharedPreferences.edit()) {
-            putString()
+            putString(SHARED_PREFERENCES_TIME_KEY, model.timeData)
+            putBoolean(SHARED_PREFERENCES_ON_OFF_KEY, model.onOff)
+            commit()
         }
+
+        return model
     }
 
     companion object {
