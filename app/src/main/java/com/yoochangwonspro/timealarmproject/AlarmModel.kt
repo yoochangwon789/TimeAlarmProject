@@ -5,5 +5,8 @@ data class AlarmModel(
     val minute: Int,
     val onOff: Boolean
 ) {
-
+    val timeAmPm: String
+        get() {
+            return if (hour < 12) "AM" else "PM"
+        }
 }
