@@ -30,6 +30,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    private fun initAlarmChangeButton() {
+        alarmChangeButton.setOnClickListener {
+
+        }
+    }
+
     @SuppressLint("CommitPrefEdits")
     private fun alarmSaveData(
         hour: Int,
