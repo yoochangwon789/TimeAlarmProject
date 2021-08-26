@@ -33,6 +33,12 @@ class MainActivity : AppCompatActivity() {
         minute: Int,
         onOff: Boolean
     ) : AlarmModel {
+        val model = AlarmModel(hour, minute, onOff)
 
+        val sharedPreferences = getSharedPreferences()
+    }
+
+    companion object {
+        private const val SHARED_PREFERENCES_NAME = "time"
     }
 }
