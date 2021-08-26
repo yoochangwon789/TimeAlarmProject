@@ -4,13 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#222222"
     tools:context=".MainActivity">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/alarm_time_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="30dp"
+        app:layout_constraintDimensionRatio="H, 1:1"
+        app:layout_constraintBottom_toTopOf="@id/alarm_on_off_btn"/>
 
     <TextView
         android:id="@+id/time_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="09:30"
+        android:textColor="@color/white"
         android:textSize="50sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PM"
+        android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintTop_toBottomOf="@id/time_text_view"
         app:layout_constraintStart_toStartOf="parent"
