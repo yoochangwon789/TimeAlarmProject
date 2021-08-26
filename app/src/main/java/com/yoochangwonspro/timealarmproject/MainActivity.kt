@@ -27,4 +27,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
+    private fun alarmSaveData(
+        hour: Int,
+        minute: Int,
+        onOff: Boolean
+    ) : AlarmModel {
+
+    }
 }
