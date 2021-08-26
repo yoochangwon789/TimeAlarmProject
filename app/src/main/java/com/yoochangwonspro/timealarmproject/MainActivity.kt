@@ -1,5 +1,7 @@
 package com.yoochangwonspro.timealarmproject
 
+import android.annotation.SuppressLint
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    @SuppressLint("CommitPrefEdits")
     private fun alarmSaveData(
         hour: Int,
         minute: Int,
@@ -35,10 +38,16 @@ class MainActivity : AppCompatActivity() {
     ) : AlarmModel {
         val model = AlarmModel(hour, minute, onOff)
 
-        val sharedPreferences = getSharedPreferences()
+        val sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+
+        with(sharedPreferences.edit()) {
+            putString()
+        }
     }
 
     companion object {
         private const val SHARED_PREFERENCES_NAME = "time"
+        private const val SHARED_PREFERENCES_TIME_KEY = "time_key"
+        private const val SHARED_PREFERENCES_ON_OFF_KEY = "onOff_key"
     }
 }
