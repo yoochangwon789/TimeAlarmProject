@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        initAlarmChangeButton()
     }
 
     private fun initAlarmChangeButton() {
@@ -40,14 +42,16 @@ class MainActivity : AppCompatActivity() {
             TimePickerDialog(this, { _, hour, minute ->
                 val model = alarmSaveData(hour, minute, false)
 
+                renderView(model)
 
-
-            }, Calendar.HOUR_OF_DAY, Calendar.MINUTE, false)
+            }, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false)
+                .show()
         }
     }
 
-    private fun renderView() {
-
+    private fun renderView(model: AlarmModel) {
+        timeTextView.text = model.timeText
+        amPmTextView.text = model.timeAmPm
     }
 
     @SuppressLint("CommitPrefEdits")
