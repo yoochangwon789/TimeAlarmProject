@@ -11,10 +11,14 @@ class AlarmReceiver : BroadcastReceiver() {
     }
 
     private fun initNotificationCreateChannel() {
-
     }
 
     private fun initCreateNotification() {
 
+    }
+
+    companion object {
+        private const val CHANNEL_NAME = "Alarm Channel"
+        private const val CHANNEL_ID = "AlarmChannelID"
     }
 }
