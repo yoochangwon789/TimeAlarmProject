@@ -39,7 +39,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginHorizontal="15dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/alarm_on_off_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="알람 켜기"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/alarm_time_change_btn"
         tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
