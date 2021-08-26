@@ -1,8 +1,12 @@
 package com.yoochangwonspro.timealarmproject
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.os.Build
+import androidx.core.app.NotificationManagerCompat
 
 class AlarmReceiver : BroadcastReceiver() {
 
@@ -10,7 +14,16 @@ class AlarmReceiver : BroadcastReceiver() {
         TODO("Not yet implemented")
     }
 
-    private fun initNotificationCreateChannel() {
+    private fun initNotificationCreateChannel(context: Context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val mChannel = NotificationChannel(
+                CHANNEL_ID,
+                CHANNEL_NAME,
+                NotificationManager.IMPORTANCE_HIGH
+            )
+
+            NotificationManagerCompat.from(context).createNotificationChannel(mChannel)
+        }
     }
 
     private fun initCreateNotification() {
