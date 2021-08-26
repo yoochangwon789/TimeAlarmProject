@@ -9,4 +9,12 @@ class AlarmReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         TODO("Not yet implemented")
     }
+
+    private fun initNotificationCreateChannel() {
+
+    }
+
+    private fun initCreateNotification() {
+
+    }
 }
