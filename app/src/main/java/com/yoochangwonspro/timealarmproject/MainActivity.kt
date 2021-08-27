@@ -68,6 +68,8 @@ class MainActivity : AppCompatActivity() {
                     AlarmManager.INTERVAL_DAY,
                     pendingIntent
                 )
+            } else {
+                alarmPendingIntentCancel()
             }
         }
     }
