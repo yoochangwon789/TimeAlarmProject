@@ -92,6 +92,15 @@ class MainActivity : AppCompatActivity() {
             minute = timeHourMinute[1].toInt(),
             onOff = onOff
         )
+
+        val pendingIntent = PendingIntent.getBroadcast(
+            this,
+            PENDING_INTENT_REQUEST_CODE,
+            Intent(this, AlarmReceiver::class.java),
+            PendingIntent.FLAG_NO_CREATE
+        )
+
+
     }
 
     private fun alarmPendingIntentCancel() {
