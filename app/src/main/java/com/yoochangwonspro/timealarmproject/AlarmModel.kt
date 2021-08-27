@@ -18,8 +18,8 @@ data class AlarmModel(
             return if (hour < 12) "AM" else "PM"
         }
 
-    val timeData: String
-        get() {
-            return "$hour:$minute"
-        }
+    fun timeData(): String {
+        return "$hour:$minute"
+    }
+
 }
