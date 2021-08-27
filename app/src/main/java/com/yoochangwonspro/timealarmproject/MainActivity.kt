@@ -42,6 +42,19 @@ class MainActivity : AppCompatActivity() {
     private fun initAlarmOnOffButton() {
         alarmOnOffButton.setOnClickListener {
             val model = it.tag as? AlarmModel ?: return@setOnClickListener
+            val newModel = alarmSaveData(model.hour, model.minute, model.onOff.not())
+            renderView(newModel)
+
+            if (newModel.onOff) {
+                val calendar = Calendar.getInstance().apply {
+                    set(Calendar.HOUR_OF_DAY, newModel.hour)
+                    set(Calendar.MINUTE, newModel.minute)
+
+                    if (before(Calendar.getInstance())) {
+                        add(Calendar.DATE, 1)
+                    }
+                }
+            }
         }
     }
 
