@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         timeTextView.text = model.timeText
         amPmTextView.text = model.timeAmPm
         alarmOnOffButton.apply {
-            text = model.
+            text = model.onOffText
         }
     }
 
