@@ -89,5 +89,6 @@ class MainActivity : AppCompatActivity() {
         private const val SHARED_PREFERENCES_NAME = "time"
         private const val SHARED_PREFERENCES_TIME_KEY = "time_key"
         private const val SHARED_PREFERENCES_ON_OFF_KEY = "onOff_key"
+        private const val PENDING_INTENT_REQUEST_CODE = 100
     }
 }
