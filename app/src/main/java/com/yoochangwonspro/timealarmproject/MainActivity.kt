@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.app.TimePickerDialog
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -81,8 +82,11 @@ class MainActivity : AppCompatActivity() {
     private fun alarmPendingIntentCancel() {
         val pendingIntent = PendingIntent.getBroadcast(
             this,
-
+            PENDING_INTENT_REQUEST_CODE,
+            Intent(this, AlarmReceiver::class.java),
+            PendingIntent.FLAG_NO_CREATE
         )
+        pendingIntent.cancel()
     }
 
     companion object {
