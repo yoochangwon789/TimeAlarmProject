@@ -100,8 +100,14 @@ class MainActivity : AppCompatActivity() {
             PendingIntent.FLAG_NO_CREATE
         )
 
-        // 데이터가 없으면서 알림이 켜져있는 경우
-//        if (pendingIntent == null && )
+        // 알람 데이터가 없으면서 알림이 켜져있는 경우
+        if (pendingIntent == null && alarmModel.onOff) {
+            alarmModel.onOff = false
+        }
+        // 알람 데이터가 있으면서 알람이 꺼져있는 경우
+        else if (pendingIntent != null && alarmModel.onOff.not()) {
+            pendingIntent.cancel()
+        }
 
         return alarmModel
     }
