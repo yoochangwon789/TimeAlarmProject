@@ -40,7 +40,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initAlarmOnOffButton() {
-
+        alarmOnOffButton.setOnClickListener {
+            val model = it.tag as? AlarmModel ?: return@setOnClickListener
+        }
     }
 
     private fun initAlarmChangeButton() {
