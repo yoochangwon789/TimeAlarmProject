@@ -100,7 +100,8 @@ class MainActivity : AppCompatActivity() {
             PendingIntent.FLAG_NO_CREATE
         )
 
-
+        // 데이터가 없으면서 알림이 켜져있는 경우
+//        if (pendingIntent == null && )
 
         return alarmModel
     }

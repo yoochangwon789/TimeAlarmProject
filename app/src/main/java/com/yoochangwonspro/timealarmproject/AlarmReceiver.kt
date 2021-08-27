@@ -1,19 +1,23 @@
 package com.yoochangwonspro.timealarmproject
 
+import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
 class AlarmReceiver : BroadcastReceiver() {
 
+    @SuppressLint("LongLogTag")
     override fun onReceive(context: Context, intent: Intent?) {
         initNotificationCreateChannel(context)
         initCreateNotification(context)
+        Log.d("AlarmReceiverBroadcastReceive", "onReceive")
     }
 
     private fun initNotificationCreateChannel(context: Context) {
