@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
             Intent(this, AlarmReceiver::class.java),
             PendingIntent.FLAG_NO_CREATE
         )
-        pendingIntent.cancel()
+        pendingIntent?.cancel()
     }
 
     companion object {
