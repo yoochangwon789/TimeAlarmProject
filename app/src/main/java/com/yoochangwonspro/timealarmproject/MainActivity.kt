@@ -1,6 +1,7 @@
 package com.yoochangwonspro.timealarmproject
 
 import android.annotation.SuppressLint
+import android.app.PendingIntent
 import android.app.TimePickerDialog
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -78,7 +79,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun alarmPendingIntentCancel() {
-        
+        val pendingIntent = PendingIntent.getBroadcast(
+            this,
+
+        )
     }
 
     companion object {
