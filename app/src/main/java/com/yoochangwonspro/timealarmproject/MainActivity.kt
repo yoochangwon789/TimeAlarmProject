@@ -80,6 +80,20 @@ class MainActivity : AppCompatActivity() {
         return model
     }
 
+    private fun fetchDataAlarm(): AlarmModel {
+        val sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE)
+
+        val time = sharedPreferences.getString(SHARED_PREFERENCES_TIME_KEY, "9:30") ?: "9:30"
+        val onOff = sharedPreferences.getBoolean(SHARED_PREFERENCES_ON_OFF_KEY, false)
+        val timeHourMinute = time.split(":")
+
+        val alarmModel = AlarmModel(
+            hour = timeHourMinute[0].toInt(),
+            minute = timeHourMinute[1].toInt(),
+            onOff = onOff
+        )
+    }
+
     private fun alarmPendingIntentCancel() {
         val pendingIntent = PendingIntent.getBroadcast(
             this,
