@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
                 val model = alarmSaveData(hour, minute, false)
 
                 renderView(model)
+                alarmPendingIntentCancel()
 
             }, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false)
                 .show()
