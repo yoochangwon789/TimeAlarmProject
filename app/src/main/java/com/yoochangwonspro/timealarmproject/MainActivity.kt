@@ -39,6 +39,10 @@ class MainActivity : AppCompatActivity() {
         renderView(model)
     }
 
+    private fun initAlarmOnOffButton() {
+
+    }
+
     private fun initAlarmChangeButton() {
         alarmChangeButton.setOnClickListener {
 
