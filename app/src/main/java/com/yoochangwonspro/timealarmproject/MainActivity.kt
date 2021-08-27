@@ -1,6 +1,7 @@
 package com.yoochangwonspro.timealarmproject
 
 import android.annotation.SuppressLint
+import android.app.AlarmManager
 import android.app.PendingIntent
 import android.app.TimePickerDialog
 import android.content.Context
@@ -54,6 +55,19 @@ class MainActivity : AppCompatActivity() {
                         add(Calendar.DATE, 1)
                     }
                 }
+
+                val alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
+                val intent = Intent(this, AlarmReceiver::class.java)
+                val pendingIntent = PendingIntent.getBroadcast(
+                    this, PENDING_INTENT_REQUEST_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT
+                )
+
+                alarmManager.setInexactRepeating(
+                    AlarmManager.RTC_WAKEUP,
+                    calendar.timeInMillis,
+                    AlarmManager.INTERVAL_DAY,
+                    pendingIntent
+                )
             }
         }
     }
