@@ -34,6 +34,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         initAlarmChangeButton()
+
+        val model = fetchDataAlarm()
+        renderView(model)
     }
 
     private fun initAlarmChangeButton() {
@@ -55,6 +58,9 @@ class MainActivity : AppCompatActivity() {
     private fun renderView(model: AlarmModel) {
         timeTextView.text = model.timeText
         amPmTextView.text = model.timeAmPm
+        alarmOnOffButton.apply {
+            text = model.
+        }
     }
 
     @SuppressLint("CommitPrefEdits")
